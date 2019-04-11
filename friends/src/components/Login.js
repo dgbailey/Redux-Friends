@@ -51,6 +51,7 @@ const StyledLogin = styled.div `
         padding:10px;
         position:relative;
 
+       
         .credential-input{
            
             width:300px;
@@ -77,6 +78,10 @@ const StyledLogin = styled.div `
 
                 font-size: 20px;
             }
+
+            .fa-ellipsis-h{
+                display:none 
+            }
         }
         .fo-placeholder{
             position:absolute;
@@ -97,6 +102,9 @@ const StyledLogin = styled.div `
             
         }
        
+    }
+    .password{
+        margin-bottom:0px;
     }
 
     .transform-inputdiv{
@@ -138,19 +146,22 @@ const StyledLogin = styled.div `
     }
 
     .pulse {
-        animation: pulse ease 2s  infinite;
-           
+        animation: pulse  3s  infinite;
+        -webkit-animation:pulse ease 2s  infinite;
+        -moz-animation: pulse ease 2s  infinite;
       }
       
       @keyframes pulse {
         0% {
           background-color: lightgray;
-          margin-right:400%
+          margin-left:-300%;
+          
+          
         }
 
         20%{
             
-            background-color: gray;
+            background-color: blue;
             
         }
 
@@ -160,12 +171,12 @@ const StyledLogin = styled.div `
         }
 
         80% {
-            background-color:gray;
+            background-color:white;
             
         }
         100% {
           background-color: white;
-          margin-right:0%
+          margin-right:-300%;
         }
       }
 `
@@ -202,10 +213,27 @@ export class  Login extends Component  {
         <StyledLogin onClick={(e) => {e.stopPropagation();this.escapeAnimate()}}>
             <div className={`animation-div${this.state.submitpw ?' pulse':''}`}></div>
             <h1 className='welcome-title'>talweg</h1>
+            
             <h3 className='warm-welcome'>Hi Dustin!</h3>
+            <div onClick={(e) => {e.stopPropagation();this.loginAnimate()}} className={`inputdiv password${this.state.clicked ?' transform-inputdiv':''}`}>
+                <form  className='pw-form' onSubmit={(e) => {e.stopPropagation();e.preventDefault();this.submitPw()}}>
+                
+                    <input type='password' 
+                    className='credential-input'>
+            
+                    </input>
+                    <div className={`fo-placeholder${this.state.clicked ?' transform-placeholder':''}`}>Enter Your Username
+                    </div>
+                    <content className='input-icon-cont'>
+                        <i class="fas fa-user-lock"></i>
+                    </content>
+                </form>
+                
+            </div>
             <div onClick={(e) => {e.stopPropagation();this.loginAnimate()}} className={`inputdiv${this.state.clicked ?' transform-inputdiv':''}`}>
-                <form className='pw-form' onSubmit={(e) => {e.stopPropagation();e.preventDefault();this.submitPw()}}>
-                    <input  type='password' 
+                <form  className='pw-form' onSubmit={(e) => {e.stopPropagation();e.preventDefault();this.submitPw()}}>
+                
+                    <input type='password' 
                     className='credential-input'>
             
                     </input>
@@ -215,12 +243,14 @@ export class  Login extends Component  {
                         <i class="fas fa-key"></i>
                     </content>
                 </form>
+                
             </div>
             <div className='login-next-steps-cont'>
                     
                     <button className='forgot'>Forgot password?</button>
                     <button className='next' onClick={(e) => {e.stopPropagation();this.submitPw()}}>Next</button>
             </div>
+            
 
 
 
