@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
 import React, { Component } from 'react';
 const StyledLogin = styled.div `
-    width:450px;
+    width:400px;
     min-height:500px;
     border:1px solid lightgray;
     border-radius:10px;
@@ -10,6 +10,20 @@ const StyledLogin = styled.div `
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
+    position:relative;
+    overflow: hidden;
+
+    .animation-div{
+        height:7px;
+        position:absolute;
+        z-index:5;
+        width:100%;
+        top:0;
+        border-raduis:5px;
+       
+    }
+
+
 
 
     .welcome-title{
@@ -18,7 +32,7 @@ const StyledLogin = styled.div `
         font-family: 'Exo', sans-serif;
         text-align: center;
         font-size: 50px;
-        color:#24097b;
+        color:#2e0ba1;
         // letter-spacing: 1px;
     }
 
@@ -43,6 +57,10 @@ const StyledLogin = styled.div `
             border:none;
             font-size:15px;
             
+        }
+
+        .pw-form{
+            display:flex;
         }
         .input-icon-cont{
             display:flex;
@@ -118,6 +136,38 @@ const StyledLogin = styled.div `
         }
         
     }
+
+    .pulse {
+        animation: pulse ease 2s  infinite;
+           
+      }
+      
+      @keyframes pulse {
+        0% {
+          background-color: lightgray;
+          margin-right:400%
+        }
+
+        20%{
+            
+            background-color: gray;
+            
+        }
+
+        30%{
+            background-color: blue;
+            
+        }
+
+        80% {
+            background-color:gray;
+            
+        }
+        100% {
+          background-color: white;
+          margin-right:0%
+        }
+      }
 `
 
 export class  Login extends Component  {
@@ -125,7 +175,8 @@ export class  Login extends Component  {
         super();
         this.state={
             password:'',
-            clicked:false
+            clicked:false,
+            submitpw:false
         }
     }
 
@@ -140,16 +191,21 @@ export class  Login extends Component  {
         this.setState({clicked:false})
     }
 
+    submitPw(){
+        console.log('submit')
+        this.setState({submitpw:true})
+    }
    
 
     render(){
         return(
         <StyledLogin onClick={(e) => {e.stopPropagation();this.escapeAnimate()}}>
-            <div className='animation-div'></div>
+            <div className={`animation-div${this.state.submitpw ?' pulse':''}`}></div>
             <h1 className='welcome-title'>talweg</h1>
             <h3 className='warm-welcome'>Hi Dustin!</h3>
             <div onClick={(e) => {e.stopPropagation();this.loginAnimate()}} className={`inputdiv${this.state.clicked ?' transform-inputdiv':''}`}>
-                    <input type='password' 
+                <form className='pw-form' onSubmit={(e) => {e.stopPropagation();e.preventDefault();this.submitPw()}}>
+                    <input  type='password' 
                     className='credential-input'>
             
                     </input>
@@ -158,11 +214,12 @@ export class  Login extends Component  {
                     <content className='input-icon-cont'>
                         <i class="fas fa-key"></i>
                     </content>
+                </form>
             </div>
             <div className='login-next-steps-cont'>
                     
                     <button className='forgot'>Forgot password?</button>
-                    <button className='next'>Next</button>
+                    <button className='next' onClick={(e) => {e.stopPropagation();this.submitPw()}}>Next</button>
             </div>
 
 
