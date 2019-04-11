@@ -13,6 +13,13 @@ const StyledApp = styled.div`
   justify-content:center;
   margin-top:40px;
 
+  input:focus,
+  select:focus,
+  textarea:focus,
+  button:focus {
+    outline: none;
+  }
+}
 
 `
 
