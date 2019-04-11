@@ -1,5 +1,9 @@
 import styled, { css } from 'styled-components';
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+
+import {initiateLogin} from '../actions';
+
 const StyledLogin = styled.div `
     width:400px;
     min-height:500px;
@@ -185,11 +189,21 @@ export class  Login extends Component  {
     constructor(){
         super();
         this.state={
-            password:'',
+            credentials:{
+                username:'',
+                password:''
+            },
             clicked:false,
             submitpw:false
+            
         }
     }
+    handleChanges = e =>
+        this.setState({credentials:{
+            ...this.state.credentials,
+            [e.target.name]:e.target.value
+        }})
+    
 
     loginAnimate(){
         
@@ -206,55 +220,75 @@ export class  Login extends Component  {
         console.log('submit')
         this.setState({submitpw:true})
     }
+
+    login = e => {
+        e.preventDefault();
+        this.props.initiateLogin(this.state.credentials)
+
+        .then(() => this.props.history.push('/protected'))
+    }
    
+    componentDidMount(){
+        this.setState({submitpw:this.props.loginStart})
+    }
 
     render(){
         return(
-        <StyledLogin onClick={(e) => {e.stopPropagation();this.escapeAnimate()}}>
-            <div className={`animation-div${this.state.submitpw ?' pulse':''}`}></div>
-            <h1 className='welcome-title'>talweg</h1>
-            
-            <h3 className='warm-welcome'>Hi Dustin!</h3>
-            <div onClick={(e) => {e.stopPropagation();this.loginAnimate()}} className={`inputdiv password${this.state.clicked ?' transform-inputdiv':''}`}>
-                <form  className='pw-form' onSubmit={(e) => {e.stopPropagation();e.preventDefault();this.submitPw()}}>
+            <StyledLogin onClick={(e) => {e.stopPropagation();this.escapeAnimate()}}>
+               
+                <div className={`animation-div${this.state.submitpw ?' pulse':''}`}></div>
+                <h1 className='welcome-title'>talweg</h1>
                 
-                    <input type='password' 
-                    className='credential-input'>
-            
-                    </input>
-                    <div className={`fo-placeholder${this.state.clicked ?' transform-placeholder':''}`}>Enter Your Username
-                    </div>
-                    <content className='input-icon-cont'>
-                        <i class="fas fa-user-lock"></i>
-                    </content>
-                </form>
+                <h3 className='warm-welcome'>Hi Dustin!</h3>
+                <div onClick={(e) => {e.stopPropagation();this.loginAnimate()}} className={`inputdiv password${this.state.clicked ?' transform-inputdiv':''}`}>
+                    <form  className='pw-form' onSubmit={() => this.login}>
+                        
+                        <input name='username' value={this.state.credentials.username} onChange={this.handleChanges}
+                        className='credential-input'>
                 
-            </div>
-            <div onClick={(e) => {e.stopPropagation();this.loginAnimate()}} className={`inputdiv${this.state.clicked ?' transform-inputdiv':''}`}>
-                <form  className='pw-form' onSubmit={(e) => {e.stopPropagation();e.preventDefault();this.submitPw()}}>
-                
-                    <input type='password' 
-                    className='credential-input'>
-            
-                    </input>
-                    <div className={`fo-placeholder${this.state.clicked ?' transform-placeholder':''}`}>Enter Your Password
-                    </div>
-                    <content className='input-icon-cont'>
-                        <i class="fas fa-key"></i>
-                    </content>
-                </form>
-                
-            </div>
-            <div className='login-next-steps-cont'>
+                        </input>
+                        <div className={`fo-placeholder${this.state.clicked ?' transform-placeholder':''}`}>Enter Your Username
+                        </div>
+                        <content className='input-icon-cont'>
+                            <i class="fas fa-user-lock"></i>
+                        </content>
+                    </form>
                     
-                    <button className='forgot'>Forgot password?</button>
-                    <button className='next' onClick={(e) => {e.stopPropagation();this.submitPw()}}>Next</button>
-            </div>
-            
+                </div>
+                <div onClick={(e) => {e.stopPropagation();this.loginAnimate()}} className={`inputdiv${this.state.clicked ?' transform-inputdiv':''}`}>
+                    <form  className='pw-form' onSubmit={() => this.login}>
+                    
+                        <input type='password' name='password' value={this.state.credentials.password} onChange={this.handleChanges}
+                        className='credential-input'>
+                
+                        </input>
+                        <div className={`fo-placeholder${this.state.clicked ?' transform-placeholder':''}`}>Enter Your Password
+                        </div>
+                        <content className='input-icon-cont'>
+                            <i class="fas fa-key"></i>
+                        </content>
+                    </form>
+                    
+                </div>
+                <div className='login-next-steps-cont'>
+                        
+                        <button className='forgot'>Forgot password?</button>
+                        <button className='next' onClick={(e) => {e.stopPropagation();this.submitPw();this.login(e)}}>Next</button>
+                </div>
+                
 
 
 
-        </StyledLogin> 
+            </StyledLogin> 
         )
+
     }
 }
+
+const mapStateToProps = ({loginStart,error}) => ({
+   loginStart,
+    error
+
+})
+
+export default connect(mapStateToProps,{initiateLogin})(Login)
