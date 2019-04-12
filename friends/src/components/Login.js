@@ -244,7 +244,7 @@ class Login extends Component  {
                 
                 <h3 className='warm-welcome'>Hi Dustin!</h3>
                 <div onClick={(e) => {e.stopPropagation();this.loginAnimate()}} className={`inputdiv password${this.state.clicked ?' transform-inputdiv':''}`}>
-                    <form  className='pw-form' onSubmit={() => this.login}>
+                    <form  className='pw-form' onSubmit={this.login}>
                         
                         <input name='username' value={this.state.credentials.username} onChange={this.handleChanges}
                         className='credential-input'>
@@ -291,10 +291,14 @@ class Login extends Component  {
 const mapStateToProps = state => {
     console.log('mapping state to props')
    return{
-       loginStart:state.loginR.loginStart,
-        error:state.loginR.error
+       loginStart:state.loginStart,
+        error:state.error
      }
 
 }
 
+
+//Make sure you do not have two copies of react or react-dom between your friends folder directory and outside of your friends folder directory
+//nmp ls react  or npm ls react-dom in each to identify
+//removing duplicate copies from /friends did the tricks
 export default connect(mapStateToProps,{initiateLogin})(Login);

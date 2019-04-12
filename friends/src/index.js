@@ -12,7 +12,7 @@ import logger from 'redux-logger'
 import loginR from './reducers/loginreducer';
 
 
-const store = createStore(loginR,applyMiddleware(logger,thunk));
+const store = createStore(loginR,applyMiddleware(thunk,logger));
 ReactDOM.render(<Provider store={store}><App/></Provider>, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change

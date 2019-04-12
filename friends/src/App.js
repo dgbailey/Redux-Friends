@@ -3,7 +3,8 @@ import logo from './logo.svg';
 import './App.css';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import styled, { css } from 'styled-components';
-import {Login} from './components';
+import Login from './components/Login';
+import PrivateRoute from './components/PrivateRoute';
 
 
 
@@ -28,9 +29,12 @@ const StyledApp = styled.div`
 class App extends Component {
   render() {
     return (
-      <StyledApp>
-        <Login/>
-      </StyledApp>
+      <Router>
+        <StyledApp>
+          <Login/>
+        </StyledApp>
+        <PrivateRoute exact path='/protected' component={FriendList}/>
+      </Router>
     );
   }
 }

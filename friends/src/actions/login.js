@@ -10,7 +10,7 @@ export const LOGIN_FAILURE = 'LOGIN_FAILURE';
 
 export const initiateLogin = creds => dispatch =>{
 
-    dispatch({target:LOGIN_START});
+    dispatch({type:LOGIN_START});
 
     return axios
     .post('http://localhost:5000/api/login',creds)
