@@ -2,7 +2,8 @@ import styled, { css } from 'styled-components';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import {initiateLogin} from '../actions';
+
+import {initiateLogin} from '../actions/login';
 
 const StyledLogin = styled.div `
     width:400px;
@@ -185,9 +186,9 @@ const StyledLogin = styled.div `
       }
 `
 
-export class  Login extends Component  {
-    constructor(){
-        super();
+class Login extends Component  {
+    constructor(props){
+        super(props);
         this.state={
             credentials:{
                 username:'',
@@ -198,6 +199,11 @@ export class  Login extends Component  {
             
         }
     }
+
+    componentDidUpdate(){
+        console.log('props',this.props)
+    }
+
     handleChanges = e =>
         this.setState({credentials:{
             ...this.state.credentials,
@@ -228,10 +234,7 @@ export class  Login extends Component  {
         .then(() => this.props.history.push('/protected'))
     }
    
-    componentDidMount(){
-        this.setState({submitpw:this.props.loginStart})
-    }
-
+  
     render(){
         return(
             <StyledLogin onClick={(e) => {e.stopPropagation();this.escapeAnimate()}}>
@@ -249,9 +252,9 @@ export class  Login extends Component  {
                         </input>
                         <div className={`fo-placeholder${this.state.clicked ?' transform-placeholder':''}`}>Enter Your Username
                         </div>
-                        <content className='input-icon-cont'>
-                            <i class="fas fa-user-lock"></i>
-                        </content>
+                        <div className='input-icon-cont'>
+                            <i className="fas fa-user-lock"></i>
+                        </div>
                     </form>
                     
                 </div>
@@ -264,9 +267,9 @@ export class  Login extends Component  {
                         </input>
                         <div className={`fo-placeholder${this.state.clicked ?' transform-placeholder':''}`}>Enter Your Password
                         </div>
-                        <content className='input-icon-cont'>
-                            <i class="fas fa-key"></i>
-                        </content>
+                        <div className='input-icon-cont'>
+                            <i className="fas fa-key"></i>
+                        </div>
                     </form>
                     
                 </div>
@@ -285,10 +288,13 @@ export class  Login extends Component  {
     }
 }
 
-const mapStateToProps = ({loginStart,error}) => ({
-   loginStart,
-    error
+const mapStateToProps = state => {
+    console.log('mapping state to props')
+   return{
+       loginStart:state.loginR.loginStart,
+        error:state.loginR.error
+     }
 
-})
+}
 
-export default connect(mapStateToProps,{initiateLogin})(Login)
+export default connect(mapStateToProps,{initiateLogin})(Login);

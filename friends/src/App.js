@@ -3,7 +3,8 @@ import logo from './logo.svg';
 import './App.css';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import styled, { css } from 'styled-components';
-import {Login} from './components/Login';
+import {Login} from './components';
+
 
 
 const StyledApp = styled.div`
@@ -28,7 +29,7 @@ class App extends Component {
   render() {
     return (
       <StyledApp>
-        <Login></Login>
+        <Login/>
       </StyledApp>
     );
   }

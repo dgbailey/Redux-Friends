@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import { LOGIN_START, LOGIN_SUCCESS, LOGIN_FAILURE, initiateLogin } from '../actions';
+import { LOGIN_START, LOGIN_SUCCESS, LOGIN_FAILURE } from '../actions';
 
 
 const initialState = {
@@ -11,7 +11,7 @@ const initialState = {
     
 
 }
-export const loginR = (state=initialState,action) => {
+const loginR = (state=initialState,action) => {
     switch(action.type){
         case LOGIN_START:
         return{
@@ -45,3 +45,5 @@ export const loginR = (state=initialState,action) => {
 
 
 }
+
+export default loginR;
