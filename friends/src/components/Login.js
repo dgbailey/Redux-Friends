@@ -244,7 +244,7 @@ class Login extends Component  {
                 
                 <h3 className='warm-welcome'>Hi Dustin!</h3>
                 <div onClick={(e) => {e.stopPropagation();this.loginAnimate()}} className={`inputdiv password${this.state.clicked ?' transform-inputdiv':''}`}>
-                    <form  className='pw-form' onSubmit={this.login}>
+                    <form  className='pw-form' >
                         
                         <input name='username' value={this.state.credentials.username} onChange={this.handleChanges}
                         className='credential-input'>
@@ -259,7 +259,7 @@ class Login extends Component  {
                     
                 </div>
                 <div onClick={(e) => {e.stopPropagation();this.loginAnimate()}} className={`inputdiv${this.state.clicked ?' transform-inputdiv':''}`}>
-                    <form  className='pw-form' onSubmit={() => this.login}>
+                    <form  className='pw-form' onSubmit={ e=>{e.preventDefault();this.submitPw();setTimeout((()=>this.login(e)),2000)}}>
                     
                         <input type='password' name='password' value={this.state.credentials.password} onChange={this.handleChanges}
                         className='credential-input'>
