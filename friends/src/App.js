@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import styled, { css } from 'styled-components';
 import Login from './components/Login';
 import PrivateRoute from './components/PrivateRoute';
+import ItemList from './components/ItemList';
 
 
 
@@ -31,9 +32,9 @@ class App extends Component {
     return (
       <Router>
         <StyledApp>
-          <Login/>
+          <Route exact path='/' component={Login}/>
         </StyledApp>
-        <PrivateRoute exact path='/protected' component={FriendList}/>
+        <PrivateRoute exact path='/protected' component={ItemList}/>
       </Router>
     );
   }

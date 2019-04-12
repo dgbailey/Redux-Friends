@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 
-import {initiateLogin} from '../actions/login';
+import {initiateLogin} from '../actions';
 
 const StyledLogin = styled.div `
     width:400px;
@@ -276,7 +276,7 @@ class Login extends Component  {
                 <div className='login-next-steps-cont'>
                         
                         <button className='forgot'>Forgot password?</button>
-                        <button className='next' onClick={(e) => {e.stopPropagation();this.submitPw();this.login(e)}}>Next</button>
+                        <button className='next' onClick={(e) => {e.stopPropagation();this.submitPw();setTimeout((()=>this.login(e)),2000)}}>Next</button>
                 </div>
                 
 

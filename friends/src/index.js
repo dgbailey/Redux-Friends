@@ -9,10 +9,10 @@ import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
 import logger from 'redux-logger'
 // import rootReducer from './reducers';
-import loginR from './reducers/loginreducer';
+import rootReducer from './reducers/index';
 
 
-const store = createStore(loginR,applyMiddleware(thunk,logger));
+const store = createStore(rootReducer,applyMiddleware(thunk,logger));
 ReactDOM.render(<Provider store={store}><App/></Provider>, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
