@@ -49,8 +49,8 @@ const StyledLogin = styled.div `
        
         display:flex;
         justify-content:center;
-        height:40px;
-        width:350px;
+        height: 64px;
+        width: 350px;
         border-radius:5px;
         border:1px solid lightgray;
         padding:10px;
@@ -117,6 +117,7 @@ const StyledLogin = styled.div `
     }
     .login-next-steps-cont{
         width:372px;
+        padding:10px;
         display:flex;
         justify-content:space-between;
     }

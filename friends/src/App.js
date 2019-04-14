@@ -10,6 +10,9 @@ import ItemList from './components/ItemList';
 
 
 const StyledApp = styled.div`
+  * {
+    box-sizing: border-box;
+  }
   display:flex;
   flex-direction:column;
   align-items:center;
