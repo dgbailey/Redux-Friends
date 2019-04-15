@@ -17,13 +17,18 @@ const StyledApp = styled.div`
   flex-direction:column;
   align-items:center;
   justify-content:center;
-  margin-top:40px;
+  
+  font-family: 'Roboto', sans-serif;
 
   input:focus,
   select:focus,
   textarea:focus,
   button:focus {
     outline: none;
+  }
+
+  .gen-login-container{
+    margin-top: 40px;
   }
 }
 

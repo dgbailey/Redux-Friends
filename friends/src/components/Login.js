@@ -10,7 +10,7 @@ const StyledLoginContainer=styled.div`
     display:flex;
     border:1px solid lightgray;
     border-radius:10px;
-
+    font-family: 'Roboto', sans-serif;
 
 `
 const StyledLogin = styled.div `
@@ -45,7 +45,7 @@ const StyledLogin = styled.div `
         font-family: 'Ubuntu', sans-serif;
         text-align: center;
         font-size: 50px;
-        color:#000;
+        color:#0f0f14;
         // letter-spacing: 1px;
     }
 
@@ -204,6 +204,7 @@ const StyledLogin = styled.div `
     }
     h3{
         font-weight:250;
+        
     }
     
     .inputdiv {
@@ -252,11 +253,12 @@ const StyledLogin = styled.div `
             }
         }
         .fo-placeholder{
+            font-family: 'Roboto', sans-serif;
             position:absolute;
             left: 0;
-            top: 17px;
+            top: 20px;
             padding-left: 10px;
-            font-size:20px;
+            font-size:17px;
             color: gray;
             z-index:1;
             transition: transform 150ms cubic-bezier(0.4,0,0.2,1),opacity 150ms cubic-bezier(0.4,0,0.2,1);
@@ -266,7 +268,7 @@ const StyledLogin = styled.div `
         .transform-placeholder{
             padding:0px 10px;
             transform: scale(.75) translateY(-39px);
-            color:#000;
+            color:#0f0f14;
             
         }
        
@@ -276,13 +278,14 @@ const StyledLogin = styled.div `
     }
 
     .transform-inputdiv{
-        border:2px solid #000;
+        border:2px solid #0f0f14;
     }
     .login-next-steps-cont{
         width:372px;
         padding:10px;
         display:flex;
         justify-content:space-between;
+        font-family: 'Roboto', sans-serif;
     }
 
     button{
@@ -300,7 +303,8 @@ const StyledLogin = styled.div `
     }
     .next{
         color:white;
-        background:#000;
+        background:#0f0f14;
+        font-family: 'Roboto', sans-serif;
     }
 
     .forgot{
@@ -330,17 +334,17 @@ const StyledLogin = styled.div `
 
         20%{
             
-            background-color: blue;
+            background-color: #00e4ff;
             
         }
 
         30%{
-            background-color: blue;
+            background-color: #00e4ff;
             
         }
 
         80% {
-            background-color:white;
+            background-color: white;
             
         }
         100% {
@@ -425,7 +429,7 @@ class Login extends Component  {
                         <h2>
                        
                         <svg class="login-icon">
-                            <circle fill="#000" cx="33" cy="33" r="33"></circle>
+                            <circle fill="#0f0f14" cx="33" cy="33" r="33"></circle>
                             <path d="M38.4 15l1-3h1l1.2 3c.2.2.5.2.7.3l2.2-2.5 1 .4-.2 3.3c.2 0 .3.2.5.4l3-1.5.7.7-1.4 3 .5.5h3.3l.4.8-2.5 2.2c0 .2 0 .5.2.7l3 1v1l-3 1.2-.3.8 2.5 2-.4 1-3.3-.2-.4.7 1.5 2.8-.7.7-3-1.4c0 .2-.4.4-.6.5l.2 3.3-1 .4-2-2.5c-.3 0-.6 0-1 .2l-1 3h-1l-1-3c-.2-.2-.5-.2-.8-.3l-2 2.5-1-.4.2-3.3-.7-.4-2.8 1.5-.7-.7 1.4-3c-.2 0-.4-.4-.5-.6l-3.3.2-.4-1 2.5-2c0-.3 0-.6-.2-1l-3-1v-1l3-1c.2-.2.2-.4.3-.7l-2.5-2.2.4-1 3.3.2c0-.2.2-.3.4-.5l-1.5-3 .7-.7 3 1.4.5-.5v-3.3l.8-.4 2.2 2.5s.5 0 .7-.2z" fill="#00b6cc" transform="rotate(143.20083851999883 40 25)">
                             <animateTransform attributeName="transform"
                           attributeType="XML"
@@ -434,7 +438,7 @@ class Login extends Component  {
                           to="0 40 25"
                           dur="10s"
                           repeatCount="indefinite"/></path>
-                            <circle fill="#000" cx="40" cy="25" r="2"></circle>
+                            <circle fill="#0f0f14" cx="40" cy="25" r="2"></circle>
                             <path d="M21.6 26.8L19 25l-1.3 1 1.4 3c0 .2-.3.4-.5.6l-3-.8-1 1.4 2.4 2.3-.4.8-3.2.3-.3 1.6 3 1.4v.8l-3 1.4.4 1.6 3.2.3c0 .3.2.5.3.8l-2.4 2.3.8 1.4 3-.8.7.6-1.3 3 1.3 1 2.6-1.8c.3 0 .5.3.8.4l-.3 3.2 1.6.6 2-2.7c.2 0 .5 0 .7.2l1 3h1.5l1-3c0-.2.4-.2.7-.3l2 2.7 1.4-.6-.4-3.2c.3 0 .5-.3.8-.4L37 49l1.3-1-1.4-3c0-.2.3-.4.5-.6l3 .8 1-1.4-2.4-2.3.4-.8 3.2-.3.3-1.6-3-1.4v-.8l3-1.4-.4-1.6-3.2-.3c0-.3-.2-.5-.3-.8l2.4-2.3-.8-1.4-3 .8-.7-.6 1.3-3-1.3-1-2.6 1.8c-.3 0-.5-.3-.8-.4l.3-3.2-1.6-.6-2 2.7c-.2 0-.5 0-.7-.2l-1-3h-1.5l-1 3c0 .2-.4.2-.7.3l-2-2.7-1.4.6.4 3.2c-.3 0-.5.3-.8.4z" fill="#00e4ff" > 
                             <animateTransform attributeName="transform"
                           attributeType="XML"
@@ -443,13 +447,13 @@ class Login extends Component  {
                           to="360 28 37"
                           dur="10s"
                           repeatCount="indefinite"/></path>
-                            <circle fill="#000" cx="28" cy="37" r="3"></circle>
+                            <circle fill="#0f0f14" cx="28" cy="37" r="3"></circle>
                         </svg>
                     </h2> 
                     </div>
-                    <div className='slogan-container'>
+                    {/* <div className='slogan-container'>
                     <h3 className="slogan">social sentiment analysis</h3>
-                    </div>
+                    </div> */}
                     
                     <div onClick={(e) => {e.stopPropagation();this.loginAnimate()}} className={`inputdiv password${this.state.clicked ?' transform-inputdiv':''}`}>
                         <form  className='pw-form' >
