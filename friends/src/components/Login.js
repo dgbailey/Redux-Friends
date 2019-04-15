@@ -160,7 +160,7 @@ const StyledLogin = styled.div `
                       opacity:1;
                     }
                     to {
-                      transform: translate(350%, -100%) rotate(300deg) ;
+                      transform: translate(350%, -100%) rotate(-300deg) ;
                       opacity:0;
                     }
                 }
@@ -392,7 +392,7 @@ class Login extends Component  {
                     <div className='flock-output-ani'>
                         <div className='output-items'>
                             
-                            <div className='output one'><i class="far fa-envelope"></i></div>
+                            <div className='output one'><i class="fas fa-chart-line"></i></div>
                             <div className='output two'><i class="far fa-paper-plane"></i></div>
                             <div className='output three'><i class="far fa-grin"></i></div>
                             <div className='output four'><i class="fab fa-twitter"></i></div>
