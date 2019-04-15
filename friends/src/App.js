@@ -13,10 +13,12 @@ const StyledApp = styled.div`
   * {
     box-sizing: border-box;
   }
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:center;
+
+  width:100%;
+  height:100%;
+
+  
+  
   
   font-family: 'Roboto', sans-serif;
 
@@ -41,8 +43,9 @@ class App extends Component {
       <Router>
         <StyledApp>
           <Route exact path='/' component={Login}/>
+          <PrivateRoute exact path='/protected' component={ItemList}/>
         </StyledApp>
-        <PrivateRoute exact path='/protected' component={ItemList}/>
+        
       </Router>
     );
   }

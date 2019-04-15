@@ -4,6 +4,17 @@ import {getData} from '../actions/index';
 import { connect } from 'react-redux';
 import {StyledNavigation} from './Nav';
 
+const StyledDataView = styled.div`
+
+
+    display:flex;
+    height:100%;
+    justify-content: flex-end;
+    
+
+
+`
+
 class ItemList extends Component {
     constructor(props){
         super(props);
@@ -18,8 +29,8 @@ class ItemList extends Component {
 
     render(){
         return( 
-                <div>
-                    <StyledNavigation/>
+                <StyledDataView>
+                    
 
                     {this.props.fetchingData && (<div><h1>Waiting....</h1></div>)}
 
@@ -36,7 +47,8 @@ class ItemList extends Component {
                     
                     
                         </div>)}
-                </div>
+                    <StyledNavigation/>
+                </StyledDataView>
 
 
 

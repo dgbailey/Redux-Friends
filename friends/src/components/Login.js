@@ -8,12 +8,15 @@ import {initiateLogin} from '../actions';
 
 const StyledLoginContainer=styled.div`
     display:flex;
-    border:1px solid lightgray;
+    justify-content:center;
     border-radius:10px;
     font-family: 'Roboto', sans-serif;
+    
+    
 
 `
 const StyledLogin = styled.div `
+    border: 1px solid lightgray;
     width:400px;
     min-height:500px;
     

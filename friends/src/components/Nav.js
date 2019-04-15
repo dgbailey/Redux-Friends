@@ -4,9 +4,11 @@ import styled, { css } from 'styled-components';
 const StyledNav = styled.div`
 
     
-    height:60px;
+    height:100%;
+    width:100px;
     display:flex;
-    justify-content:space-between;
+    flex-direction:column;
+    
     border-bottom:1px solid lightgray;
     padding:10px;
     font-family: 'Ubuntu', sans-serif;
@@ -16,14 +18,29 @@ const StyledNav = styled.div`
 
     .global-nav-and-dash{
 
-        width:400px;
+        
         display:flex;
-        margin-left:20px;
+        flex-direction:column;
+        
+        .skinny-nav{
+            display:flex;
+            flex-direction:column;
+            color:white;
+            font-size:30px;
+            .fas,.fab{
+                width:auto;
+                margin:10px;
+                text-align:center;
+            }
+
+
+        }
 
         .logo-top-left{
         
             display:flex;
             align-items:center;
+            
             font-family: 'Ubuntu', sans-serif;
             text-align: center;
             font-size: 15px;
@@ -34,20 +51,15 @@ const StyledNav = styled.div`
         .feature-categories{
             display:flex;
             color:white;
-            width:200px;
+            
             align-items: center;
+            flex-direction:column;
     
-            ul{
-                display:flex;
-                list-style-type:none
-                
-            }
-            li{
-                text-decoration:none;
-                margin-right:30px;
-            }
+            
+            
         }
 
+        
     }
     
 
@@ -72,18 +84,16 @@ export const StyledNavigation = () =>{
             <StyledNav>
                 <div className='global-nav-and-dash'>
                     <div className='logo-top-left'><h1>flock</h1></div>
-                    <div className='feature-categories'>
+                    <div className='skinny-nav'>
+                        <i class="fas fa-angle-double-left"></i>
+                        <i className="fab fa-searchengin"></i>
+                        <i className="fas fa-user-alt"></i>
+                        <i class="fas fa-hashtag"></i>
                 
-                    <ul>
-                        <li>#Trends</li>
-                        <li>Dashboard</li>
-                    </ul>
+                    </div>
                 </div>
-                </div>
-                <div className='right-item-container'>
-                    <i className="fas fa-user-alt"></i>
                 
-                </div>
+               
                 
 
             </StyledNav>
