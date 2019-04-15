@@ -2,7 +2,7 @@ import styled, { css } from 'styled-components';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import {Graphic} from './Graphic';
-import twitlogo from '../svg';
+import twit from '../svg/twitter-brands (1).svg'
 import {initiateLogin} from '../actions';
 
 
@@ -54,44 +54,134 @@ const StyledLogin = styled.div `
         justify-content:center;
         height:100px;
         width:200px;
-        background:powderblue;
+        
 
         h2{
             height: 60px;
     
             width: 60px;
+            z-index:1;
         }
 
         .output-items{
-            height:50px;
-            width:62px;
-            border:1px solid red;
-            display:flex;
-            flex-wrap:wrap;
+            height:100px;
+            width:200px;
+           
+            
+            
             position:absolute;
-            top:30px;
+            
+            
 
             .output{
                 height:20px;
                 width:20px
-                border:1px solid yellow;
+                animation:infinite-spinning 3s linear infinite,move-out 4s linear infinite;
+                position:absolute;
+                top:50%;
+                left:50%;
 
-                .one{
-                    animation:infinite-spinning 4s infinite;
+                &.two{
+                    animation:up-spinning 4s linear infinite,move-out 4s linear infinite;
                 }
+
+                &.three{
+                    opacity:.5;
+                    top:80%;
+                    left:20%;
+                    animation:forwardup-spinning 3.5s linear infinite,move-out 4s linear infinite;
+                }
+
+                &.four{
+                    opacity:.5;
+                    top:0%;
+                    left:10%;
+                    animation:forward-spinning 4s linear infinite,move-out 4s linear infinite;
+                }
+
+                &.five{
+                    opacity:.5;
+                    top:0%;
+                    left:10%;
+                    top:20%;
+                    animation:forward-spinning 3s linear infinite,move-out 4s linear infinite;
+                }
+                
+                @keyframes infinite-spinning {
+                    from {
+                      transform: rotate(0deg);
+                      opacity:1;
+                    }
+                    to {
+                      transform: translate(350%, 50%) rotate(300deg) ;
+                      opacity:0;
+                    }
+                }
+
+                @keyframes forward-spinning {
+                    from {
+                        transform: translate(0%, 0%) rotate(5deg) ;
+                      
+                    }
+                    to {
+                        opacity:1;
+                        transform: translate(400%, 200%) rotate(180deg)
+                        
+                    }
+                }
+
+                @keyframes forwardup-spinning {
+                    from {
+                        transform: translate(0%, 0%) rotate(20deg) ;
+                      
+                    }
+                    to {
+                        opacity:1;
+                        transform: translate(300%, -100%)
+                        
+                    }
+                }
+
+                @keyframes forwardhash-spinning {
+                    from {
+                        transform: translate(0%, 0%) rotate(20deg) ;
+                      
+                    }
+                    to {
+                        opacity:1;
+                        transform: translate(300%, 100%)
+                        
+                    }
+                }
+
+                @keyframes up-spinning {
+                    from {
+                      transform: rotate(0deg);
+                      opacity:1;
+                    }
+                    to {
+                      transform: translate(350%, -100%) rotate(300deg) ;
+                      opacity:0;
+                    }
+                }
+
+                // @keyframes move-out {
+                //     from {
+                //       transform: rotate(0deg);
+                      
+                //     }
+                //     to {
+                //       transform: translateX(100px) translateY(50px);
+                //       opacity:0;
+                //     }
+                // }
                 
             }
         }
 
     }
-    @keyframes infinite-spinning {
-        from {
-          transform: rotate(0deg);
-        }
-        to {
-          transform: rotate(360deg);
-        }
-    }
+    
+    
 
     .inputdiv {
 
@@ -302,11 +392,11 @@ class Login extends Component  {
                     <div className='flock-output-ani'>
                         <div className='output-items'>
                             
-                            <img className='output one' src='`${twitlogo}`'/>
-                            <img className='output'></img>
-                            <img className='output'></img>
-                            <img className='output'></img>
-                            <img className='output'></img>
+                            <div className='output one'><i class="far fa-envelope"></i></div>
+                            <div className='output two'><i class="far fa-paper-plane"></i></div>
+                            <div className='output three'><i class="far fa-grin"></i></div>
+                            <div className='output four'><i class="fab fa-twitter"></i></div>
+                            <div className='output five'><i class="fas fa-hashtag"></i></div>
                         </div>
                         <h2>
                        
