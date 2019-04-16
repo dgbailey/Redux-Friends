@@ -39,7 +39,7 @@ const StyledDataView = styled.div`
        
 
         .tweet-factory-column{
-            border-left: 2px solid #4a4a4a30
+            border-right: 2px solid #4a4a4a30
             height:100%
             overflow:scroll;
             width: 300px;
@@ -206,7 +206,7 @@ class ItemList extends Component {
                     <div className='column-container'>
                          
                         
-                        <CustomSearch/>
+                        
                         <div className='tweet-factory-column'>
                         <div className='column-title'>
                                 <span className='trend-icon'><i class="fas fa-bolt"></i></span><h3 className='tab-title'>Trending</h3>
@@ -231,6 +231,7 @@ class ItemList extends Component {
                         
                         
                         </div>
+                        <CustomSearch/>
                     </div>
                     
                 </StyledDataView>

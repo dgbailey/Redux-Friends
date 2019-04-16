@@ -1,10 +1,11 @@
 export { LOGIN_START, LOGIN_SUCCESS, LOGIN_FAILURE, initiateLogin } from './login';
 export {FETCH_DATA_START,
     FETCH_DATA_SUCCESS,
-    FETCH_DATA_FAILURE,getData} from './getdata'
-// export {
-//   FETCH_DATA_START,
-//   FETCH_DATA_SUCCESS,
-//   FETCH_DATA_FAILURE,
-//   initiateLogin
-// } from './login';
+    FETCH_DATA_FAILURE,getData} from './getdata';
+
+export {
+  SEND_SENTIMENT_START,
+  SEND_SENTIMENT_SUCCESS,
+  SEND_SENTIMENT_FAILURE,
+  sentimentSend
+} from './sentimentSend';

@@ -7,7 +7,7 @@ import {DataVisVue} from './DataVisVue';
 const StyledDashboard = styled.div`
     height:100%;
     display:flex;
-    
+    flex-direction:row-reverse;
     position:relative;
     
     .data-vis-vue-container{
