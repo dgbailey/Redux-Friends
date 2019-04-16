@@ -2,11 +2,27 @@ import React, { Component } from 'react';
 import styled, { css } from 'styled-components';
 
 
+const StyledSearch = styled.div`
+    .sentiment-input-search-term{
+        background:#00000030;
+        padding:10px;
+        border:none;
+        border-bottom:2px solid #ffff60
+        height:50px;
+        width:200px;
+        color:gray;
+        font-size:20px;
+    }
+
+
+`
+
 export class CustomSearch extends Component{
     constructor(){
         super();
         this.state={
-            isSearching:true
+            isSearching:true,
+            input:''
         }
 
 
@@ -21,10 +37,15 @@ export class CustomSearch extends Component{
                 <div className='tweet-factory-content demo'>
                     <div className='walk-through-content'>
                         <h3>Experience your first sentiment enhanced search</h3>
-                        <div className='tri-container demo-btn'>
+                        <StyledSearch>
+                            <input className='sentiment-input-search-term' placeholder='#LambdaSchool'></input>
+                        </StyledSearch>
+                       
+                        
+                        {/* <div className='tri-container demo-btn'>
                             <div id="triangle-logo"></div>
-                            <h4>Search</h4>
-                        </div>
+                            
+                        </div> */}
                     
                     </div>
                 
