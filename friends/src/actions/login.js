@@ -13,7 +13,8 @@ export const initiateLogin = creds => dispatch =>{
     dispatch({type:LOGIN_START});
 
     return axios
-    .post('http://localhost:5000/api/login',creds)
+    // .post('http://localhost:5000/api/login',creds)
+    .post('https://build-week.herokuapp.com/login',creds)
     .then(
         resp => {
             console.log(resp);

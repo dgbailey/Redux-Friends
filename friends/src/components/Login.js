@@ -423,15 +423,15 @@ class Login extends Component  {
                     <div className='flock-output-ani'>
                         <div className='output-items'>
                             
-                            <div className='output one'><i class="fas fa-chart-line"></i></div>
-                            <div className='output two'><i class="far fa-paper-plane"></i></div>
-                            <div className='output three'><i class="far fa-grin"></i></div>
-                            <div className='output four'><i class="fab fa-twitter"></i></div>
-                            <div className='output five'><i class="fas fa-hashtag"></i></div>
+                            <div className='output one'><i className="fas fa-chart-line"></i></div>
+                            <div className='output two'><i className="far fa-paper-plane"></i></div>
+                            <div className='output three'><i className="far fa-grin"></i></div>
+                            <div className='output four'><i className="fab fa-twitter"></i></div>
+                            <div className='output five'><i className="fas fa-hashtag"></i></div>
                         </div>
                         <h2>
                        
-                        <svg class="login-icon">
+                        <svg className="login-icon">
                             <circle fill="#0f0f14" cx="33" cy="33" r="33"></circle>
                             <path d="M38.4 15l1-3h1l1.2 3c.2.2.5.2.7.3l2.2-2.5 1 .4-.2 3.3c.2 0 .3.2.5.4l3-1.5.7.7-1.4 3 .5.5h3.3l.4.8-2.5 2.2c0 .2 0 .5.2.7l3 1v1l-3 1.2-.3.8 2.5 2-.4 1-3.3-.2-.4.7 1.5 2.8-.7.7-3-1.4c0 .2-.4.4-.6.5l.2 3.3-1 .4-2-2.5c-.3 0-.6 0-1 .2l-1 3h-1l-1-3c-.2-.2-.5-.2-.8-.3l-2 2.5-1-.4.2-3.3-.7-.4-2.8 1.5-.7-.7 1.4-3c-.2 0-.4-.4-.5-.6l-3.3.2-.4-1 2.5-2c0-.3 0-.6-.2-1l-3-1v-1l3-1c.2-.2.2-.4.3-.7l-2.5-2.2.4-1 3.3.2c0-.2.2-.3.4-.5l-1.5-3 .7-.7 3 1.4.5-.5v-3.3l.8-.4 2.2 2.5s.5 0 .7-.2z" fill="#00b6cc" transform="rotate(143.20083851999883 40 25)">
                             <animateTransform attributeName="transform"

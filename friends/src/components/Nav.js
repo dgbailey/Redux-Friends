@@ -67,12 +67,12 @@ const StyledNav = styled.div`
                 z-index: 1;
                 color: black;
                 position: absolute;
-                top: -20%;
+                top: -69%;;
              
             color: black;}
             .tri-container{
                 width: 30px;
-                height: 63px;
+                height: 38px;;
                 background: #00b6cc;
                 overflow: hidden;
                 position: relative;
