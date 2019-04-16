@@ -15,10 +15,13 @@ const StyledNav = styled.div`
     background: rgb(15, 15, 20);
     color:white;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px;
+   
+    
 
     .global-nav-and-dash{
         
         
+
         display:flex;
         flex-direction:column;
         
@@ -28,10 +31,20 @@ const StyledNav = styled.div`
             flex-direction:column;
             color:white;
             font-size:18px;
+            box-sizing: border-box;
             .fas,.fab{
                 width:auto;
                 margin:10px;
                 text-align:center;
+                padding-bottom:20px;
+                
+
+                &:hover{
+                    cursor:pointer;
+                    color:#00b6cc;
+                    border-radius:50%;
+                    
+                }
             }
 
 
@@ -89,9 +102,8 @@ const StyledNav = styled.div`
         }
 
         
+        
     }
-    
-
     
 
     .right-item-container{
@@ -102,40 +114,44 @@ const StyledNav = styled.div`
         padding:10px;
     }
 
-   
-
 
 `
+
+
 
 export const StyledNavigation = () =>{
     return(
         <div className='outer-most-global-container'>
-            <StyledNav>
-                <div className='global-nav-and-dash'>
-                    <div className='logo-top-left'>
-                        <div className='tri-container'>
-                            <div id="triangle-logo"></div>
-                            <h1>f</h1>
+            
+                   
+            <div className='relative-pos-barrier'>
+                <StyledNav>
+                    <div className='global-nav-and-dash'>
+                        <div className='logo-top-left'>
+                            <div className='tri-container'>
+                                <div id="triangle-logo"></div>
+                                <h1>f</h1>
+                            </div>
+
+                            
                         </div>
-
-                        
+                        <div className='skinny-nav'>
+                            <i class="fas fa-angle-double-left"></i>
+                            <i class="fas fa-search"></i>
+                            <i className="fas fa-user-alt"></i>
+                            
+                    
+                        </div>
                     </div>
-                    <div className='skinny-nav'>
-                        <i class="fas fa-angle-double-left"></i>
-                        <i class="fas fa-search"></i>
-                        <i className="fas fa-user-alt"></i>
-                        
+                    
                 
-                    </div>
-                </div>
-                
-               
-                
+                    
 
-            </StyledNav>
-            <div className='global-right-sidebar'>
-                
+                </StyledNav>
             </div>
+            
+                
+            
         </div>
 
 

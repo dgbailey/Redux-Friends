@@ -22,8 +22,11 @@ const StyledDashboard = styled.div`
             width:100%;
             background:#00e4ff;
             position:absolute;
-        }
-
+    }
+    
+    .relative-pos-barrier{
+        height:100%;
+    }
 `
 
 

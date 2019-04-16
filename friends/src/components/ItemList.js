@@ -3,6 +3,7 @@ import styled, { css } from 'styled-components';
 import {getData} from '../actions/index';
 import { connect } from 'react-redux';
 import {StyledNavigation} from './Nav';
+import {CustomSearch} from './CustomSearch';
 
 const StyledDataView = styled.div`
 
@@ -10,8 +11,11 @@ const StyledDataView = styled.div`
     display:flex;
     height:100%;
     justify-content: flex-end;
-    width:100%;
-    width:608px;
+    min-width: 604px;
+    overflow: scroll;
+    max-width: 604px;
+    
+   
     
     
 
@@ -28,20 +32,21 @@ const StyledDataView = styled.div`
         border-bottom:1px solid lightgray;
         background: rgb(30, 30, 30);
         color: white;
-        width: 605px;
+        max-width:608px;
         overflow:hidden;
         justify-content: space-around;
         
        
 
         .tweet-factory-column{
-            border-left: 2px solid #7a7a7a30;
+            border-left: 2px solid #4a4a4a30
             height:100%
             overflow:scroll;
             width: 300px;
+            margin:1px;
             .column-title{
                 position:fixed;
-                
+                border:1px solid black;
                 display:flex;
                 justify-content:flex-start;
                 align-items:center;
@@ -51,7 +56,13 @@ const StyledDataView = styled.div`
                 background:#141313  ;
                 
                 &.sample{
+                    background:#ffff60;
+                    color:black;
                     
+                    h3{
+                        color:black;
+
+                    }
                 }
             }
             .trend-icon{
@@ -120,6 +131,10 @@ const StyledDataView = styled.div`
 
                 h3{
                     color:#d3d3d369;
+                }
+
+                .tab-title{
+                    color:white;
                 }
             }
 
@@ -190,27 +205,10 @@ class ItemList extends Component {
                     
                     <div className='column-container'>
                          
-                        <div className='tweet-factory-column'>
-                            <div className='column-title sample'>
-                                <span className='trend-icon'><i class="fas fa-hashtag"></i></span><h3>Custom Search</h3>
-                            </div>
-                            <div className='tweet-factory-content demo'>
-                                <div className='walk-through-content'>
-                                    <h3>Experience your first sentiment enhanced search</h3>
-                                    <div className='tri-container demo-btn'>
-                                        <div id="triangle-logo"></div>
-                                        <h4>Search</h4>
-                                    </div>
-                                
-                                </div>
-                            
-                            </div>
-                                
-                            
-                        </div>
+                        <CustomSearch/>
                         <div className='tweet-factory-column'>
                         <div className='column-title'>
-                                <span className='trend-icon'><i class="fas fa-bolt"></i></span><h3>Trending</h3>
+                                <span className='trend-icon'><i class="fas fa-bolt"></i></span><h3 className='tab-title'>Trending</h3>
                             </div>
                             <div className='tweet-factory-content'>
                         {this.props.fetchingData && (<div className='loader-icon'><i class="fas fa-crow"></i></div>)}

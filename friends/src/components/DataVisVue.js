@@ -9,6 +9,7 @@ const StyledDataVisVue = styled.div`
     background:#00b6cc;
     align-items:center;
     height:100%;
+   
 
     .fas{
         margin-top:50%;
@@ -23,7 +24,7 @@ export const DataVisVue = ()=>{
         <div className='data-vis-vue-container'>
             <StyledDataVisVue>
                 <DataVisNav/>
-                <i class="fas fa-poll"></i>
+                <i className="fas fa-poll"></i>
             </StyledDataVisVue>
         </div>
     )
