@@ -12,6 +12,7 @@ const StyledDataView = styled.div`
     justify-content: flex-end;
     width:100%;
     
+    
 
     .tweet-container-banner{
         width:50px;
@@ -19,30 +20,105 @@ const StyledDataView = styled.div`
         background:
         background:rgb(38, 38, 38);
     }
-    .column-heading{
+    .column-container{
         display:flex;
-        flex-direction:column;
+        flex-direction:row;
         align-items:center;
         border-bottom:1px solid lightgray;
         background:rgb(38, 38, 38);
         color:white;
-        width:300px;
+        width:608px;
+        overflow:hidden;
+        justify-content: space-around;
         
+       
 
-        .column-title{
-            display:flex;
-            justify-content:flex-start;
-            align-items:center;
-            box-shadow: 0 4px 2px -2px black;
-            width:300px;
-            background: #0003;
+        .tweet-factory-column{
+            border-left: 2px solid #7a7a7a30;
+            height:100%
+            overflow:scroll;
+            width: 300px;
+            .column-title{
+                position:fixed;
+                
+                display:flex;
+                justify-content:flex-start;
+                align-items:center;
+                box-shadow: 0 4px 2px -2px black;
+                width:300px;
+                height:70px;
+                background:#1b1b1b;
+                
+                &.sample{
+                    
+                }
+            }
+            .trend-icon{
+                height:20px;
+                width:20px;
+                margin-left: 20px;
+
+            }
+
+            .tweet-factory-content.demo{
+                
+                .walk-through-content{
+                    padding:20px;
+                    display:flex;
+                    flex-direction:column;
+                    text-align:center;
+                    justify-content:center;
+                    margin-top:50%;
+                    align-items:center;
+
+                    .tri-container{
+                        width: 200px;
+                        height: 63px;
+                        background: #959c21;
+                        overflow: hidden;
+                        position: relative;
+
+                        h4{
+                            position: absolute;
+                            top: 0;
+                            color: black;
+                            width: 100%;
+
+}
+                        }
+                        
+                    }
+                        
+                        
+                    }
+                    #triangle-logo{
+                        height: 60px;
+
+                        width: 200px;
+
+                        background: #fffc00;
+
+                        -webkit-transform: skewY(18deg);
+
+                        -ms-transform: skewY(18deg);
+
+                        -webkit-transform: skewY(10deg);
+
+                        -ms-transform: skewY(10deg);
+
+                        transform: skewY(9deg);
+
+                        -webkit-transform-origin: right;
+                    }
+
+                }
+
+                h3{
+                    color:#d3d3d369;
+                }
+            }
+
             
-        }
-        .trend-icon{
-            height:20px;
-            width:20px;
-            margin-left: 20px;
-
         }
 
     }
@@ -50,7 +126,8 @@ const StyledDataView = styled.div`
     .global-item-container{
         // border:1px solid lightgray;
         width:300px;
-
+        margin-top:40px;
+        padding: 10px;
         
         
 
@@ -102,30 +179,53 @@ class ItemList extends Component {
     render(){
         return( 
                 <StyledDataView>
-                    <div className='tweet-container-banner'></div>
                     
                     
-                    <div className='column-heading'>
-                        <div className='column-title'>
-                            <span className='trend-icon'><i class="fas fa-bolt"></i></span><h3>Trending</h3>
-                        </div>
-                        {this.props.fetchingData && (<div className='loader-icon'><i class="fas fa-crow"></i></div>)}
-                        {!this.props.fetchingData && this.props.responseItems.length > 0 && (
-                            <div className='global-item-container'>
+                    
+                    <div className='column-container'>
+                         
+                        <div className='tweet-factory-column'>
+                            <div className='column-title sample'>
+                                <span className='trend-icon'><i class="fas fa-hashtag"></i></span><h3>Custom Search</h3>
+                            </div>
+                            <div className='tweet-factory-content demo'>
+                                <div className='walk-through-content'>
+                                    <h3>Experience your first sentiment enhanced search</h3>
+                                    <div className='tri-container demo-btn'>
+                                        <div id="triangle-logo"></div>
+                                        <h4>Search</h4>
+                                    </div>
                                 
-                                {this.props.responseItems.map(item => {
-                                    return(
-                                        <div className='item-container'>
-                                            <h3>{item.name}</h3>
-                                            
-                                        </div>
-                                    )
-                                })}
+                                </div>
+                            
+                            </div>
+                                
+                            
+                        </div>
+                        <div className='tweet-factory-column'>
+                        <div className='column-title'>
+                                <span className='trend-icon'><i class="fas fa-bolt"></i></span><h3>Trending</h3>
+                            </div>
+                        {this.props.fetchingData && (<div className='loader-icon'><i class="fas fa-crow"></i></div>)}
+                            {!this.props.fetchingData && this.props.responseItems.length > 0 && (
+                                <div className='global-item-container'>
+                                    
+                                    {this.props.responseItems.map(item => {
+                                        return(
+                                            <div className='item-container'>
+                                                <h3>{item.name}</h3>
+                                                
+                                            </div>
+                                        )
+                                    })}
+                            
+                            
+                                </div>)}
                         
                         
-                            </div>)}
+                        </div>
                     </div>
-                    <StyledNavigation/>
+                    
                 </StyledDataView>
 
 

@@ -6,6 +6,7 @@ import styled, { css } from 'styled-components';
 import Login from './components/Login';
 import PrivateRoute from './components/PrivateRoute';
 import ItemList from './components/ItemList';
+import {DashboardVue} from './components/DashboardView';
 
 
 
@@ -33,6 +34,10 @@ const StyledApp = styled.div`
     margin-top: 40px;
     
   }
+
+  .complete-dashboard-container{
+    height:100%;
+}
 }
 
 `
@@ -44,7 +49,7 @@ class App extends Component {
       <Router>
         <StyledApp>
           <Route exact path='/' component={Login}/>
-          <PrivateRoute exact path='/protected' component={ItemList}/>
+          <PrivateRoute exact path='/protected' component={DashboardVue}/>
         </StyledApp>
         
       </Router>
