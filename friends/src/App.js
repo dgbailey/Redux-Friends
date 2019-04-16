@@ -22,6 +22,7 @@ const StyledApp = styled.div`
   
   
   font-family: 'Roboto', sans-serif;
+  font-size:14px;
 
   input:focus,
   select:focus,

@@ -11,6 +11,7 @@ const StyledDataView = styled.div`
     height:100%;
     justify-content: flex-end;
     width:100%;
+    width:608px;
     
     
 
@@ -25,9 +26,9 @@ const StyledDataView = styled.div`
         flex-direction:row;
         align-items:center;
         border-bottom:1px solid lightgray;
-        background:rgb(38, 38, 38);
-        color:white;
-        width:608px;
+        background: rgb(30, 30, 30);
+        color: white;
+        width: 605px;
         overflow:hidden;
         justify-content: space-around;
         
@@ -46,8 +47,8 @@ const StyledDataView = styled.div`
                 align-items:center;
                 box-shadow: 0 4px 2px -2px black;
                 width:300px;
-                height:70px;
-                background:#1b1b1b;
+                height: 50px;
+                background:#141313  ;
                 
                 &.sample{
                     
