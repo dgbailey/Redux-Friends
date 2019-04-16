@@ -1,7 +1,9 @@
 html{
   height:100%;
+  margin:0;
 }
 
+/* added margin zero to html stopped flex scrolling */
 body {
   margin: 0;
   padding: 0;

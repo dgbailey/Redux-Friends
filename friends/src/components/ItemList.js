@@ -59,7 +59,11 @@ const StyledDataView = styled.div`
                 margin-left: 20px;
 
             }
-
+            .tweet-factory-content{
+                display:flex;
+                flex-direction:column;
+                align-items:center;
+            }
             .tweet-factory-content.demo{
                 
                 .walk-through-content{
@@ -139,6 +143,7 @@ const StyledDataView = styled.div`
 
     .loader-icon{
         margin-top:200px;
+        margin:200px auto
     }
 
     .fa-crow{
@@ -206,6 +211,7 @@ class ItemList extends Component {
                         <div className='column-title'>
                                 <span className='trend-icon'><i class="fas fa-bolt"></i></span><h3>Trending</h3>
                             </div>
+                            <div className='tweet-factory-content'>
                         {this.props.fetchingData && (<div className='loader-icon'><i class="fas fa-crow"></i></div>)}
                             {!this.props.fetchingData && this.props.responseItems.length > 0 && (
                                 <div className='global-item-container'>
@@ -221,6 +227,7 @@ class ItemList extends Component {
                             
                             
                                 </div>)}
+                            </div>
                         
                         
                         </div>
