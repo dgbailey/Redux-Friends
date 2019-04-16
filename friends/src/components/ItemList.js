@@ -29,7 +29,7 @@ const StyledDataView = styled.div`
         display:flex;
         flex-direction:row;
         align-items:center;
-        border-bottom:1px solid lightgray;
+        
         background: rgb(30, 30, 30);
         color: white;
         max-width:608px;
@@ -41,26 +41,26 @@ const StyledDataView = styled.div`
         .tweet-factory-column{
             border-left: 2px solid #4a4a4a30
             height:100%
-            overflow:scroll;
+            // overflow:scroll;
             width: 300px;
             margin:1px;
             .column-title{
-                position:fixed;
-                border:1px solid black;
+                // position:fixed;
+                
                 display:flex;
                 justify-content:flex-start;
                 align-items:center;
                 box-shadow: 0 4px 2px -2px black;
                 width:300px;
                 height: 50px;
-                background:#141313  ;
+                background: #2c2a2a;
                 
                 &.sample{
-                    background:#ffff60;
-                    color:black;
+                    color: white;
+                    border-top: 2px solid #ffff60;
                     
                     h3{
-                        color:black;
+                        color:white;
 
                     }
                 }
@@ -205,6 +205,7 @@ class ItemList extends Component {
                     
                     <div className='column-container'>
                          
+                        <CustomSearch/>
                         <CustomSearch/>
                         <div className='tweet-factory-column'>
                         <div className='column-title'>

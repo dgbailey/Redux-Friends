@@ -39,6 +39,11 @@ const StyledApp = styled.div`
   .complete-dashboard-container{
     height:100%;
 }
+  .footer{
+    width:100%;
+    background:lightgray;
+    height:20vh;
+  }
 }
 
 `
@@ -51,9 +56,11 @@ class App extends Component {
         <StyledApp>
           <Route exact path='/' component={Login}/>
           <PrivateRoute exact path='/protected' component={DashboardVue}/>
+          
         </StyledApp>
-        
+        <div className='footer'></div>
       </Router>
+      
     );
   }
 }

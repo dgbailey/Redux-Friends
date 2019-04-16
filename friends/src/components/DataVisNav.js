@@ -6,7 +6,7 @@ const StyledDataVisNav = styled.div`
     background:black;
     display:flex;
     justify-content:space-around;
-    height:60px;
+    height: 52px;
     width:100%;
 
 
