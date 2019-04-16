@@ -418,7 +418,7 @@ class Login extends Component  {
 
                 
                     <div className={`animation-div${this.state.submitpw ?' pulse':''}`}></div>
-                    <h1 className='welcome-title'>flock</h1>
+                    <h1 className='welcome-title'>flocks</h1>
                    
                     <div className='flock-output-ani'>
                         <div className='output-items'>

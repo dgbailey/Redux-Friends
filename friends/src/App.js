@@ -31,6 +31,7 @@ const StyledApp = styled.div`
 
   .gen-login-container{
     margin-top: 40px;
+    
   }
 }
 
