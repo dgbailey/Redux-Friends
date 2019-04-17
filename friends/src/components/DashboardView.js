@@ -32,24 +32,36 @@ const StyledDashboard = styled.div`
 
 
 
-export const DashboardVue = () =>{
+export class DashboardVue extends Component{
+    constructor(){
+        super();
+        this.state={
+            toggleStatus:true
+        }
+    }
 
-        return(
-
-            <div className='complete-dashboard-container'>
-                <StyledDashboard>
-                    
-                    <DataVisVue/>
-                    <ItemList/>
-                    <StyledNavigation/>
-                </StyledDashboard>
+        toggleExpand = ()=>{
             
-            
-            
-            </div>
+            this.setState({toggleStatus:!this.state.toggleStatus})
+        }
+        render(){
+            return(
+
+                <div className='complete-dashboard-container'>
+                    <StyledDashboard>
+                        
+                        <DataVisVue toggleStatus={this.state.toggleStatus}/>
+                        <ItemList toggleStatus={this.state.toggleStatus}/>
+                        <StyledNavigation toggleExpand={this.toggleExpand} toggleStatus={this.state.toggleStatus}/>
+                    </StyledDashboard>
+                
+                
+                
+                </div>
 
 
-        )
+            )
+            }
 
 }
 

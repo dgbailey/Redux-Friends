@@ -8,13 +8,31 @@ const StyledSearch = styled.div`
         background:#00000030;
         padding:10px;
         border:none;
-        border-bottom:2px solid #ffff60
+        border-bottom: 2px solid #93934d
+
         height:50px;
-        width:200px;
+        width:275px;
         color:gray;
         font-size:20px;
+        margin-bottom:30px;
     }
 
+    
+    .demo-btn{
+        padding:20px 80px;
+        background:#cbcb5c;
+        font-weight:600;
+        margin:0px auto;
+        display:flex;
+        align-items:center;
+        border: none;
+        text-align:center;
+        &:hover{
+            cursor:pointer;
+            opacity:.8;
+        }
+        
+    }
 
 `
 
@@ -25,6 +43,7 @@ export class CustomSearch extends Component{
             isSearching:true,
             input:'#Custom Search',
             
+            
         }
 
 
@@ -34,6 +53,8 @@ export class CustomSearch extends Component{
           input: e.target.value
         });
     };
+
+    //oncsubmit function will need to encode the URI sent to DS api. 
 
     render(){
         return(
@@ -47,13 +68,15 @@ export class CustomSearch extends Component{
                         <StyledSearch>
                             <input className='sentiment-input-search-term' 
                             placeholder='#LambdaSchool' onChange={this.handleChanges}></input>
+
+                            <button className='demo-btn'>
+                                Submit Search
+                                
+                            </button>
                         </StyledSearch>
                        
                         
-                        {/* <div className='tri-container demo-btn'>
-                            <div id="triangle-logo"></div>
-                            
-                        </div> */}
+                        
                     
                     </div>
                 

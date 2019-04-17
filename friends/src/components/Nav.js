@@ -9,7 +9,7 @@ const StyledNav = styled.div`
     display:flex;
     flex-direction:column;
     
-    border-bottom:1px solid lightgray;
+    
     padding:10px;
     font-family: 'Ubuntu', sans-serif;
     background: rgb(15, 15, 20);
@@ -119,7 +119,8 @@ const StyledNav = styled.div`
 
 
 
-export const StyledNavigation = () =>{
+export const StyledNavigation = (props) =>{
+    {console.log(props)}
     return(
         <div className='outer-most-global-container'>
             
@@ -136,7 +137,7 @@ export const StyledNavigation = () =>{
                             
                         </div>
                         <div className='skinny-nav'>
-                            <i class="fas fa-angle-double-left"></i>
+                            {props.toggleStatus ? <i class="fas fa-angle-double-left" onClick={()=>props.toggleExpand()}></i>:<i class="fas fa-angle-double-right" onClick={()=>props.toggleExpand()}></i>}
                             <i class="fas fa-search"></i>
                             <i className="fas fa-user-alt"></i>
                             

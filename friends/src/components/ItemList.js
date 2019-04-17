@@ -51,13 +51,13 @@ const StyledDataView = styled.div`
                 justify-content:flex-start;
                 align-items:center;
                 box-shadow: 0 4px 2px -2px black;
-                width:300px;
+                width: 296px;
                 height: 50px;
                 background: #2c2a2a;
                 
                 &.sample{
                     color: white;
-                    border-top: 2px solid #ffff60;
+                    
                     
                     h3{
                         color:white;
@@ -100,7 +100,7 @@ const StyledDataView = styled.div`
                             color: black;
                             width: 100%;
 
-}
+
                         }
                         
                     }
@@ -181,7 +181,7 @@ const StyledDataView = styled.div`
           
         }
     }
-   
+    
 
 `
 
@@ -199,7 +199,7 @@ class ItemList extends Component {
 
     render(){
         return( 
-                <StyledDataView>
+                <StyledDataView id={!this.props.toggleStatus ? 'hidden':''}>
                     
                     
                     
