@@ -5,6 +5,25 @@ import {Graphic} from './Graphic';
 import twit from '../svg/twitter-brands (1).svg'
 import {initiateLogin} from '../actions';
 
+const sizes = {
+    desktop: 992,
+    tablet: 768,
+    phone: 576,
+}
+
+const media = Object.keys(sizes).reduce((acc,label) => {
+    acc[label] = (...args) => 
+    css`@media (max-width:${sizes[label]}px){
+        ${css(...args)}
+
+    }`
+
+    return acc
+
+    
+},{})
+
+// ${media.desktop`background:green;`}
 
 const StyledLoginContainer=styled.div`
     display:flex;
@@ -28,6 +47,9 @@ const StyledLogin = styled.div `
     justify-content: flex-start;
     position:relative;
     overflow: hidden;
+
+    ${media.desktop`border:none;`}
+    ${media.desktop`padding:0px;`}
 
     .animation-div{
         height:7px;

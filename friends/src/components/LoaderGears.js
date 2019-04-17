@@ -13,6 +13,10 @@ const LoaderGearCont = styled.div`
         height:100px;
         width:200px;
         
+        .login-icon{
+            width:80px;
+            height:80px;
+        }
         
 
         h2{

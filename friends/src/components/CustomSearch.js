@@ -11,7 +11,7 @@ const StyledSearch = styled.div`
         border-bottom: 2px solid #93934d
 
         height:50px;
-        width:275px;
+        width:240px;
         color:gray;
         font-size:20px;
         margin-bottom:30px;
@@ -27,6 +27,7 @@ const StyledSearch = styled.div`
         align-items:center;
         border: none;
         text-align:center;
+        font-size:12px;
         &:hover{
             cursor:pointer;
             opacity:.8;
@@ -64,7 +65,7 @@ export class CustomSearch extends Component{
                 </div>
                 <div className='tweet-factory-content demo'>
                     <div className='walk-through-content'>
-                        <h3>Experience your first sentiment enhanced search</h3>
+                        <h3>Experience your first #sentiment enhanced search</h3>
                         <StyledSearch>
                             <input className='sentiment-input-search-term' 
                             placeholder='#LambdaSchool' onChange={this.handleChanges}></input>

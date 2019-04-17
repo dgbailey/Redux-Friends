@@ -7,7 +7,7 @@ import {DataVisVue} from './DataVisVue';
 const StyledDashboard = styled.div`
     height:100%;
     display:flex;
-    flex-direction:row-reverse;
+    flex-direction:row;
     position:relative;
     
     .data-vis-vue-container{
@@ -49,10 +49,11 @@ export class DashboardVue extends Component{
 
                 <div className='complete-dashboard-container'>
                     <StyledDashboard>
-                        
-                        <DataVisVue toggleStatus={this.state.toggleStatus}/>
-                        <ItemList toggleStatus={this.state.toggleStatus}/>
                         <StyledNavigation toggleExpand={this.toggleExpand} toggleStatus={this.state.toggleStatus}/>
+                        <ItemList toggleStatus={this.state.toggleStatus}/>
+                        <DataVisVue toggleStatus={this.state.toggleStatus}/>
+                        
+                        
                     </StyledDashboard>
                 
                 
