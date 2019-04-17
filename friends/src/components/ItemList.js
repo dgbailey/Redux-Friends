@@ -5,6 +5,24 @@ import { connect } from 'react-redux';
 import {StyledNavigation} from './Nav';
 import {CustomSearch} from './CustomSearch';
 
+const sizes = {
+    desktop: 992,
+    tablet: 768,
+    phone: 576,
+}
+
+const media = Object.keys(sizes).reduce((acc,label) => {
+    acc[label] = (...args) => 
+    css`@media (max-width:${sizes[label]}px){
+        ${css(...args)}
+
+    }`
+
+    return acc
+
+    
+},{})
+
 const StyledDataView = styled.div`
 
 
@@ -30,28 +48,32 @@ const StyledDataView = styled.div`
         flex-direction:row;
         align-items:center;
         
+        border-left: 6px solid #272727;
         background: rgb(30, 30, 30);
         color: white;
         max-width:608px;
         overflow:hidden;
         justify-content: space-around;
+
         
-       
+        ${media.desktop`flex-direction:column-reverse;`}
 
         .tweet-factory-column{
-            border-right: 2px solid #4a4a4a30
+            border-right: 6px solid #272727;
             height:100%
             overflow:scroll;
             width: 300px;
             margin:1px;
+
+            
             .column-title{
                 position:fixed;
                 
                 display:flex;
                 justify-content:flex-start;
                 align-items:center;
-                box-shadow: 0 4px 2px -2px black;
-                width: 296px;
+                // box-shadow: 0 4px 2px -2px black;
+                width: 289px;
                 height: 50px;
                 background: #2c2a2a;
                 

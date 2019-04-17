@@ -4,11 +4,31 @@ import {StyledNavigation} from './Nav';
 import ItemList from './ItemList';
 import {DataVisVue} from './DataVisVue';
 
+
+const sizes = {
+    desktop: 992,
+    tablet: 768,
+    phone: 576,
+}
+
+const media = Object.keys(sizes).reduce((acc,label) => {
+    acc[label] = (...args) => 
+    css`@media (max-width:${sizes[label]}px){
+        ${css(...args)}
+
+    }`
+
+    return acc
+
+    
+},{})
+
 const StyledDashboard = styled.div`
     height:100%;
     display:flex;
     flex-direction:row;
     position:relative;
+    ${media.desktop`flex-direction:row-reverse;`}
     
     .data-vis-vue-container{
         width:100%;
