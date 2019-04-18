@@ -26,7 +26,7 @@ export class OutputTweet extends Component {
             isSearching: true,
             input: '#Custom Search',
             searchToggle: true,
-            fakeReduxDataTweets:['21','22','34','67','89']
+            fakeReduxDataTweets:['22','34','67','89','1113457538534477825']
 
         }
     }

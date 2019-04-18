@@ -159,6 +159,7 @@ export const StyledNavigation = (props) =>{
                             {props.toggleStatus ? <i class="fas fa-angle-double-left" onClick={()=>props.toggleExpand()}></i>:<i class="fas fa-angle-double-right" onClick={()=>props.toggleExpand()}></i>}
                             <i class="fas fa-search"></i>
                             <i className="fas fa-user-alt"></i>
+                            <i class="fas fa-bolt"></i>
                             
                     
                         </div>

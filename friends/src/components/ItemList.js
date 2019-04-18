@@ -54,9 +54,11 @@ const StyledDataView = styled.div`
         max-width:608px;
         overflow:hidden;
         justify-content: space-around;
+        -webkit-transition: width 2s; /* Safari */
+        transition: width 2s;
 
         
-        ${media.desktop`flex-direction:column-reverse;`}
+        ${media.desktop`flex-direction:row;`}
 
         .tweet-factory-column{
             border-right: 6px solid #272727;
@@ -252,6 +254,7 @@ const StyledDataView = styled.div`
             display:flex;
             flex-direction:column;
             justify-content: flex-end;
+            
         }
 
         .sentiment-input-search-term{
@@ -321,10 +324,15 @@ class ItemList extends Component {
     constructor(props){
         super(props);
         this.state={
-            selectedTrend:''
+            selectedTrend:'',
+            trendSelected:false
         }
     }
 
+
+    setInputWithTrend = (value) =>{
+        this.trendSelected && this.setState({selectedTrend:value});
+    }
     componentDidMount(){
         this.props.getData()
     }
@@ -339,7 +347,7 @@ class ItemList extends Component {
                          
                         
                         
-                        <div className='tweet-factory-column'>
+                        <div className='tweet-factory-column trending'>
                         <div className='column-title'>
                                 <span className='trend-icon'><i class="fas fa-bolt"></i></span><h3 className='tab-title'>Trending</h3>
                             </div>
@@ -367,7 +375,7 @@ class ItemList extends Component {
                         
                         
                         </div>
-                        <CustomSearch/>
+                        <CustomSearch selectedTrend={this.state.selectedTrend} trendSelected={this.state.trendSelected}/>
                     </div>
                     
                 </StyledDataView>

@@ -55,12 +55,13 @@ const StyledSearch = styled.div`
 `
 
 export class CustomSearch extends Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.state = {
             isSearching: true,
             input: '#Custom Search',
-            searchToggle: true
+            searchToggle: true,
+
 
         }
 

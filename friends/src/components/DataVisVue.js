@@ -71,7 +71,9 @@ export class DataVisVue extends Component{
                             
                         </div>
                         <AggTable/>
+                        
                 </StyledDataVisVue>
+                <BarChart/>
             </div>
         )
     }
