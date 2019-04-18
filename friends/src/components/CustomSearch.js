@@ -32,9 +32,14 @@ const StyledSearch = styled.div`
 
     #tweet{
         width:275px;
-
+        border-top:8px solid black;
         height:500px;
         overflow:scroll;
+        border-top: 4px solid #262626;
+
+        .EmbeddedTweet{
+            background:rgb(15,15,20)
+        }
     }
 
     .walk-through-content{

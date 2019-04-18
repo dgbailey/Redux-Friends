@@ -95,7 +95,7 @@ const StyledDataView = styled.div`
 
                         &:hover{
                             cursor:pointer;
-                            opacity:.8;
+                            color:#00e4ff
                         }
                     }
                 }
