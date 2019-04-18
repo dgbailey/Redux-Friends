@@ -21,7 +21,7 @@ const StyledSearch = styled.div`
     .demo-btn{
         padding:20px 80px;
         background:#cbcb5c;
-        font-weight:600;
+        font-weight:700;
         margin:0px auto;
         display:flex;
         align-items:center;

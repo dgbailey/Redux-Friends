@@ -73,16 +73,16 @@ const StyledDataView = styled.div`
                 justify-content:flex-start;
                 align-items:center;
                 // box-shadow: 0 4px 2px -2px black;
-                width: 289px;
+                width: 291px;
                 height: 50px;
                 background: #2c2a2a;
                 
                 &.sample{
-                    color: white;
+                    color: #cbcbcb;
                     
                     
                     h3{
-                        color:white;
+                        color:#cbcbcb;
 
                     }
                 }
@@ -156,7 +156,7 @@ const StyledDataView = styled.div`
                 }
 
                 .tab-title{
-                    color:white;
+                    color:#cbcbcb;
                     margin-left:5px;
                 }
             }
@@ -169,7 +169,8 @@ const StyledDataView = styled.div`
     .global-item-container{
         // border:1px solid lightgray;
         
-        margin-top:40px;
+
+        margin-top: 50px;
         width:100%;
         
         
@@ -179,8 +180,25 @@ const StyledDataView = styled.div`
             border:1px solid light-gray;
             padding:10px;
             display: flex;
+            
 
             justify-content: space-between;
+            background: rgb(15,15,20);
+
+            margin: 1px 0px;
+            h3{
+                color:#cbcbcb;
+            }
+
+            &:hover{
+                background:#cbcb5c;
+                color:black;
+                cursor:pointer;
+                h3{
+                    color:black;
+                }
+                
+            }
             
         }
 
@@ -213,7 +231,7 @@ const StyledDataView = styled.div`
             opacity:.1;
         }
         to {
-            color:white;
+            color:#cbcbcb;
           opacity:.5;
           
         }

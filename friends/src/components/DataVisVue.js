@@ -37,6 +37,7 @@ export class DataVisVue extends Component{
         return(
             <div className={`data-vis-vue-container${!this.props.toggleStatus ? ' expand':''}`}>
                 <StyledDataVisVue>
+                    
                     <DataVisNav/>
                     {/* <i className="fas fa-poll"></i> */}
                     {!this.state.test ? (<LoaderGears/>):<div className='static-state-icon'><i className="fas fa-poll"></i></div>}
