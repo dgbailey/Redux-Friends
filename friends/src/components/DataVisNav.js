@@ -10,7 +10,7 @@ const StyledDataVisNav = styled.div`
     height: 52px;
     width:100%;
     position:fixed;
-    z-index:0;
+    z-index:1;
 
     .styling-div{
         background:#0f8da8;

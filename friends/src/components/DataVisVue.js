@@ -5,6 +5,7 @@ import {LoaderGears} from './LoaderGears';
 import { connect } from 'react-redux';
 import LineChart from './LineChart';
 import BarChart from './BarChart';
+import { AggTable } from '../AggTable';
 
 const StyledDataVisVue = styled.div`
 
@@ -28,9 +29,19 @@ const StyledDataVisVue = styled.div`
     .charts-container{
         padding: 1%;
         width: 100%;
-        height: 300px;
+        height: 500px;
         max-width: 800px;
-        margin:10% 0%;
+        margin-top:12%;
+        display: flex;
+        
+        flex-direction: column;
+
+        align-items: center;
+    }
+    
+    .recharts-responsive-container{
+        font-weight:800;
+        color:black;    
     }
 
 `
@@ -53,9 +64,9 @@ export class DataVisVue extends Component{
                         
                             {/* <i className="fas fa-poll"></i> */}
                             {!this.state.test ? (<LoaderGears/>):<LineChart/>}
-                            <BarChart/>
+                            
                         </div>
-                        
+                        <AggTable/>
                 </StyledDataVisVue>
             </div>
         )
