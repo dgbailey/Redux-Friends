@@ -11,7 +11,7 @@ const StyledDataVisVue = styled.div`
 
     display:flex;
     flex-direction:column;
-    background:#00b6cc;
+    background:#fff;
     align-items:center;
     overflow: scroll;
 
@@ -42,6 +42,10 @@ const StyledDataVisVue = styled.div`
     .recharts-responsive-container{
         font-weight:800;
         color:black;    
+    }
+    //use for changing background after successful api
+    #load-success{
+        background:#c8c8c8;
     }
 
 `
@@ -88,4 +92,4 @@ const mapStateToProps = state => {
 //Make sure you do not have two copies of react or react-dom between your friends folder directory and outside of your friends folder directory
 //nmp ls react  or npm ls react-dom in each to identify
 //removing duplicate copies from /friends did the tricks
-export default connect(mapStateToProps,{})(DataView);
+export default connect(mapStateToProps,{})(DataVisVue);

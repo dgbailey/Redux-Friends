@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import styled, { css } from 'styled-components';
+import { connect } from 'react-redux';
 
 const placeholder = { 
     overall_count: 100,
@@ -17,7 +18,9 @@ const StyledTable = styled.div`
     width:60%;
     margin:1%;
     .col.type{
-        background:gray;
+        background:black;
+        color:white;
+        padding:10px;
     }
 
     .table-grid{
@@ -82,3 +85,19 @@ export class AggTable extends Component{
         )
     }
 }
+
+const mapStateToProps = state => {
+    console.log('mapping state to props')
+    return {
+        fetchingSentiment: state.fetchingSentiment,
+        sentimentData: state.sentimentData,
+        error: state.error
+    }
+
+}
+
+
+//Make sure you do not have two copies of react or react-dom between your friends folder directory and outside of your friends folder directory
+//nmp ls react  or npm ls react-dom in each to identify
+//removing duplicate copies from /friends did the tricks
+export default connect(mapStateToProps, { })(AggTable);

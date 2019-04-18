@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import styled, { css } from 'styled-components';
 import { sentimentSend } from '../actions';
 import { connect } from 'react-redux';
+import {OutputTweet} from './OutputTweet';
 
 var TwitterWidgetsLoader = require('twitter-widgets');
 
@@ -99,16 +100,9 @@ export class CustomSearch extends Component {
                         <h3>Enhance your experience with #sentiment search</h3>
                         <StyledSearch>
 
-
-                            {
-                                TwitterWidgetsLoader.load(function (err, twttr) {
-                                    if (err) {
-                                        //do some graceful degradation / fallback
-                                        return;
-                                    }
-
-                                    twttr.widgets.createTweet('20', { theme: 'dark' }, document.getElementById('tweet'));
-                                })}
+                                
+                                
+                            <OutputTweet/>  
 
                             <div id='tweet'></div>
                         </StyledSearch>
