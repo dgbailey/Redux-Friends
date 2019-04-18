@@ -88,8 +88,7 @@ const StyledDataView = styled.div`
                 }
             }
             .trend-icon{
-                height:20px;
-                width:20px;
+               
                 margin-left: 20px;
 
             }
@@ -97,6 +96,7 @@ const StyledDataView = styled.div`
                 display:flex;
                 flex-direction:column;
                 align-items:center;
+                
             }
             .tweet-factory-content.demo{
                 
@@ -157,6 +157,7 @@ const StyledDataView = styled.div`
 
                 .tab-title{
                     color:white;
+                    margin-left:5px;
                 }
             }
 
@@ -167,15 +168,29 @@ const StyledDataView = styled.div`
    
     .global-item-container{
         // border:1px solid lightgray;
-        width:300px;
+        
         margin-top:40px;
-        padding: 10px;
+        width:100%;
+        
         
         
 
         .item-container{
             border:1px solid light-gray;
+            padding:10px;
+            display: flex;
+
+            justify-content: space-between;
             
+        }
+
+        .tweet-volume{
+            display:flex;
+            align-items:center;
+
+            .fa-users{
+                padding-right:2px;
+            }
         }
     }
 
@@ -204,6 +219,7 @@ const StyledDataView = styled.div`
         }
     }
     
+   
 
 `
 
@@ -242,6 +258,10 @@ class ItemList extends Component {
                                         return(
                                             <div className='item-container'>
                                                 <h3>{item.name}</h3>
+                                                <span className='tweet-volume'>
+                                                    <i class="fas fa-users"></i><h4>{item.tweet_volume}</h4>
+                                                </span>
+                                                
                                                 
                                             </div>
                                         )
