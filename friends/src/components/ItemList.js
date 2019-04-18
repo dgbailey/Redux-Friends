@@ -79,11 +79,24 @@ const StyledDataView = styled.div`
                 
                 &.sample{
                     color: #cbcbcb;
-                   
+                    
                     
                     h3{
                         color:#cbcbcb;
+                        margin-right: 80px;
+                    }
 
+                    .fas.fa-search{
+                        padding: 10px;
+                        z-index:5;
+                        background: rgb(15,15,20);
+
+                        border-radius: 50%;
+
+                        &:hover{
+                            cursor:pointer;
+                            opacity:.8;
+                        }
                     }
                 }
             }
@@ -180,7 +193,7 @@ const StyledDataView = styled.div`
             border:1px solid light-gray;
             padding:10px;
             display: flex;
-            
+            overflow:hidden;
 
             justify-content: space-between;
             background: rgb(15,15,20);
@@ -241,12 +254,12 @@ const StyledDataView = styled.div`
         }
 
         .sentiment-input-search-term{
-            z-index:2;
+           
             background:rgb(15,15,20);
             padding:10px;
             border:none;
             border-bottom: 2px solid #93934d
-    
+            height:100%;
             height:50px;
             width:100%;
             color:gray;
@@ -279,6 +292,10 @@ const StyledDataView = styled.div`
             
             
         }
+    }
+    
+    #query{
+        overflow:initial;
     }
 
     @keyframes loadcrow {
