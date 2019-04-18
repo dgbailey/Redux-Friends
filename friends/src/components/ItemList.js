@@ -263,7 +263,7 @@ const StyledDataView = styled.div`
             height:100%;
             height:50px;
             width:100%;
-            color:#80808075
+            color:#ffffffa6;
             
             font-size:20px;
             margin-bottom: 5px;

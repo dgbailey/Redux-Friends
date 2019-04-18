@@ -3,8 +3,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import {Graphic} from './Graphic';
 import twit from '../svg/twitter-brands (1).svg'
-import {initiateLogin} from '../actions';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import {initiateRegister} from '../actions';
 
 const sizes = {
     desktop: 992,
@@ -328,8 +327,8 @@ const StyledLogin = styled.div `
         
     }
     .next{
-        color:white;
-        background:#0f0f14;
+        color:black;
+        background:#00b6cc;
         font-family: 'Roboto', sans-serif;
     }
 
@@ -382,7 +381,7 @@ const StyledLogin = styled.div `
      
 `
 
-class Login extends Component  {
+class Registration extends Component  {
     constructor(props){
         super(props);
         this.state={
@@ -423,12 +422,11 @@ class Login extends Component  {
         this.setState({submitpw:true})
     }
 
-    login = e => {
+    register = e => {
         e.preventDefault();
-        this.props.initiateLogin(this.state.credentials)
+        this.props.initiateRegister(this.state.credentials)
 
         .then(() => this.props.history.push('/protected'))
-        .catch(err => console.log('failuer',err))
     }
    
   
@@ -514,8 +512,8 @@ class Login extends Component  {
                     </div>
                     <div className='login-next-steps-cont'>
                             
-                            <Link to='/register'><button className='forgot'>Create Account</button></Link>
-                            <button className='next' onClick={(e) => {e.stopPropagation();this.submitPw();setTimeout((()=>this.login(e)),2000)}}>Next</button>
+                            <button className='forgot'>Login</button>
+                            <button className='next' onClick={(e) => {e.stopPropagation();this.submitPw();setTimeout((()=>this.register(e)),2000)}}>Create</button>
                     </div>
                     
 
@@ -534,7 +532,7 @@ class Login extends Component  {
 const mapStateToProps = state => {
     console.log('mapping state to props')
    return{
-       loginStart:state.loginStart,
+       registerStart:state.registerStart,
         error:state.error
      }
 
@@ -544,4 +542,4 @@ const mapStateToProps = state => {
 //Make sure you do not have two copies of react or react-dom between your friends folder directory and outside of your friends folder directory
 //nmp ls react  or npm ls react-dom in each to identify
 //removing duplicate copies from /friends did the tricks
-export default connect(mapStateToProps,{initiateLogin})(Login);
+export default connect(mapStateToProps,{initiateRegister})(Registration);

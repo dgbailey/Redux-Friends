@@ -83,7 +83,7 @@ export class CustomSearch extends Component {
                 <div className='search-bar-container' id={this.state.searchToggle ? '':'hidden'}>
                     <div className='search-bar-hidden-drop'>
                         <input className='sentiment-input-search-term'
-                            placeholder='#LambdaSchoolBuildWeek' onChange={this.handleChanges}></input>
+                            placeholder='Enter Search' onChange={this.handleChanges}></input>
 
                         <button className='demo-btn'>
                             <span>Submit Search</span><i class="fas fa-arrow-circle-right"></i>

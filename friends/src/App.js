@@ -7,6 +7,7 @@ import Login from './components/Login';
 import PrivateRoute from './components/PrivateRoute';
 import ItemList from './components/ItemList';
 import {DashboardVue} from './components/DashboardView';
+import Registration from './components/Registration';
 
 const sizes = {
   desktop: 992,
@@ -71,7 +72,8 @@ class App extends Component {
       <Router>
         <StyledApp>
           <Route exact path='/' component={Login}/>
-          <PrivateRoute exact path='/protected' component={DashboardVue}/>
+          <Route exact path='/register' component={Registration}/>
+          <Route exact path='/protected' component={DashboardVue}/>
           
         </StyledApp>
         
