@@ -205,7 +205,7 @@ const StyledDataView = styled.div`
             }
 
             &:hover{
-                background:#cbcb5c;
+                background:#ffff84;
                 color:black;
                 cursor:pointer;
                 h3,.tweet-volume{
@@ -289,7 +289,7 @@ const StyledDataView = styled.div`
             font-size:12px;
             &:hover{
                 cursor:pointer;
-                opacity:.8;
+                background:#ffff84;
             }
             
             
@@ -321,7 +321,7 @@ class ItemList extends Component {
     constructor(props){
         super(props);
         this.state={
-            items:[]
+            selectedTrend:''
         }
     }
 

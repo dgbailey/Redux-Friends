@@ -23,10 +23,11 @@ const StyledSearch = styled.div`
         text-align:center;
         font-size:12px;
        
-        &:hover{
-            cursor:pointer;
-            opacity:.8;
-        }
+        // &:hover{
+        //     cursor:pointer;
+        //     background:#ffff84;
+        // }//these selectors are in ItemList
+       
         
         
     }
@@ -83,7 +84,8 @@ export class CustomSearch extends Component {
                 <div className='search-bar-container' id={this.state.searchToggle ? '':'hidden'}>
                     <div className='search-bar-hidden-drop'>
                         <input className='sentiment-input-search-term'
-                            placeholder='Enter Search' onChange={this.handleChanges}></input>
+                            placeholder='Enter Search' 
+                            onChange={this.handleChanges}></input>
 
                         <button className='demo-btn'>
                             <span>Submit Search</span><i class="fas fa-arrow-circle-right"></i>
