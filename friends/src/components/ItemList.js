@@ -47,7 +47,7 @@ const StyledDataView = styled.div`
         display:flex;
         flex-direction:row;
         align-items:center;
-        
+        z-index:3;
         border-left: 6px solid #272727;
         background: rgb(30, 30, 30);
         color: white;
@@ -68,7 +68,7 @@ const StyledDataView = styled.div`
             
             .column-title{
                 position:fixed;
-                z-index:1;
+                z-index:3;
                 display:flex;
                 justify-content:flex-start;
                 align-items:center;
@@ -76,6 +76,7 @@ const StyledDataView = styled.div`
                 width: 291px;
                 height: 50px;
                 background: #2c2a2a;
+                
                 
                 &.sample{
                     color: #cbcbcb;
@@ -262,7 +263,8 @@ const StyledDataView = styled.div`
             height:100%;
             height:50px;
             width:100%;
-            color:gray;
+            color:#80808075
+            
             font-size:20px;
             margin-bottom: 5px;
             

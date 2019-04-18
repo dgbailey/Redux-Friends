@@ -35,7 +35,7 @@ const StyledSearch = styled.div`
         border-top:8px solid black;
         height:500px;
         overflow:scroll;
-        border-top: 4px solid #262626;
+        border-top: 4px solid #00b6cc;
 
         .EmbeddedTweet{
             background:rgb(15,15,20)
@@ -82,7 +82,7 @@ export class CustomSearch extends Component {
                 <div className='search-bar-container' id={this.state.searchToggle ? '':'hidden'}>
                     <div className='search-bar-hidden-drop'>
                         <input className='sentiment-input-search-term'
-                            placeholder='#LambdaSchool' onChange={this.handleChanges}></input>
+                            placeholder='#LambdaSchoolBuildWeek' onChange={this.handleChanges}></input>
 
                         <button className='demo-btn'>
                             <span>Submit Search</span><i class="fas fa-arrow-circle-right"></i>

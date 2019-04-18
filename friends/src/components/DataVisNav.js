@@ -9,7 +9,8 @@ const StyledDataVisNav = styled.div`
     justify-content: flex-end;
     height: 52px;
     width:100%;
-    
+    position:fixed;
+    z-index:0;
 
     .styling-div{
         background:#0f8da8;

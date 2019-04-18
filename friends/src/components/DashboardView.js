@@ -37,7 +37,7 @@ const StyledDashboard = styled.div`
         
 
     }
-    .vis-vue-background{
+    .data-vis-vue-background{
             height:100%;
             width:100%;
             background:#00e4ff;
@@ -46,6 +46,11 @@ const StyledDashboard = styled.div`
     
     .relative-pos-barrier{
         height:100%;
+    }
+
+    //overflow scroll necessary for responsive adjustment in chrom when using percentage paddings
+    .data-vis-vue-container{
+        overflow:scroll;
     }
 `
 

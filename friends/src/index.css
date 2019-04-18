@@ -23,6 +23,7 @@ body {
 
 .outer-most-global-container{
   height:100%;
+  z-index: 5;
 }
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",

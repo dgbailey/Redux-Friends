@@ -28,7 +28,7 @@ const StyledNav = styled.div`
     display:flex;
     flex-direction:column;
     
-    
+    z-index:50;
     padding:10px;
     font-family: 'Ubuntu', sans-serif;
     background: rgb(15, 15, 20);

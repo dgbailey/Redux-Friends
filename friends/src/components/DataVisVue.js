@@ -3,6 +3,8 @@ import styled, { css } from 'styled-components';
 import {DataVisNav} from './DataVisNav';
 import {LoaderGears} from './LoaderGears';
 import { connect } from 'react-redux';
+import LineChart from './LineChart';
+import BarChart from './BarChart';
 
 const StyledDataVisVue = styled.div`
 
@@ -10,7 +12,7 @@ const StyledDataVisVue = styled.div`
     flex-direction:column;
     background:#00b6cc;
     align-items:center;
-    
+    overflow: scroll;
 
     height:100%;
    
@@ -23,6 +25,14 @@ const StyledDataVisVue = styled.div`
         width:100%;
     }
 
+    .charts-container{
+        padding: 1%;
+        width: 100%;
+        height: 300px;
+        max-width: 800px;
+        margin:10% 0%;
+    }
+
 `
 
 export class DataVisVue extends Component{
@@ -30,7 +40,7 @@ export class DataVisVue extends Component{
         super(props);
         this.state={
             chartData:[],
-            test:false
+            test:true   
         }
     }
     render(){
@@ -39,8 +49,13 @@ export class DataVisVue extends Component{
                 <StyledDataVisVue>
                     
                     <DataVisNav/>
-                    {/* <i className="fas fa-poll"></i> */}
-                    {!this.state.test ? (<LoaderGears/>):<div className='static-state-icon'><i className="fas fa-poll"></i></div>}
+                        <div className="charts-container">
+                        
+                            {/* <i className="fas fa-poll"></i> */}
+                            {!this.state.test ? (<LoaderGears/>):<LineChart/>}
+                            <BarChart/>
+                        </div>
+                        
                 </StyledDataVisVue>
             </div>
         )
