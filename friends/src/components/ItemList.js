@@ -68,7 +68,7 @@ const StyledDataView = styled.div`
             
             .column-title{
                 position:fixed;
-                
+                z-index:1;
                 display:flex;
                 justify-content:flex-start;
                 align-items:center;
@@ -79,7 +79,7 @@ const StyledDataView = styled.div`
                 
                 &.sample{
                     color: #cbcbcb;
-                    
+                   
                     
                     h3{
                         color:#cbcbcb;
@@ -101,7 +101,7 @@ const StyledDataView = styled.div`
             .tweet-factory-content.demo{
                 
                 .walk-through-content{
-                    padding:20px;
+                    
                     display:flex;
                     flex-direction:column;
                     text-align:center;
@@ -194,7 +194,7 @@ const StyledDataView = styled.div`
                 background:#cbcb5c;
                 color:black;
                 cursor:pointer;
-                h3{
+                h3,.tweet-volume{
                     color:black;
                 }
                 
@@ -205,9 +205,10 @@ const StyledDataView = styled.div`
         .tweet-volume{
             display:flex;
             align-items:center;
-
+            color:#cbcbcb;
             .fa-users{
                 padding-right:2px;
+
             }
         }
     }
@@ -222,6 +223,62 @@ const StyledDataView = styled.div`
         color:black;
         opacity:.1;
         animation:loadcrow  ease  2s infinite;
+    }
+
+    .search-bar-container{
+        position:relative;
+        height:auto;
+
+        .search-bar-hidden-drop{
+            position: absolute;
+            background: rgb(15,15,20);
+            height: 90px;
+            width: 100%;
+            height: 200px;
+            display:flex;
+            flex-direction:column;
+            justify-content: flex-end;
+        }
+
+        .sentiment-input-search-term{
+            z-index:2;
+            background:rgb(15,15,20);
+            padding:10px;
+            border:none;
+            border-bottom: 2px solid #93934d
+    
+            height:50px;
+            width:100%;
+            color:gray;
+            font-size:20px;
+            margin-bottom: 5px;
+            
+            //button is in CustomSearch
+
+            
+        }
+        .demo-btn{
+            display:flex;
+            justify-content:space-between;
+            width:100%;
+            height:40px;
+            
+            
+            background:#cbcb5c;
+            font-weight:700;
+            margin:0px auto;
+            display:flex;
+            align-items:center;
+            border: none;
+            text-align:center;
+            font-size:12px;
+            &:hover{
+                cursor:pointer;
+                opacity:.8;
+            }
+            
+            
+        }
     }
 
     @keyframes loadcrow {

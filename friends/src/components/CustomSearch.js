@@ -3,19 +3,12 @@ import styled, { css } from 'styled-components';
 import {sentimentSend} from '../actions';
 import { connect } from 'react-redux';
 
-const StyledSearch = styled.div`
-    .sentiment-input-search-term{
-        background:#00000030;
-        padding:10px;
-        border:none;
-        border-bottom: 2px solid #93934d
+var TwitterWidgetsLoader = require('twitter-widgets');
 
-        height:50px;
-        width:240px;
-        color:gray;
-        font-size:20px;
-        margin-bottom:30px;
-    }
+const StyledSearch = styled.div`
+    
+
+    
 
     
     .demo-btn{
@@ -33,7 +26,15 @@ const StyledSearch = styled.div`
             opacity:.8;
         }
         
+        
     }
+
+    #tweet{
+        width:275px;
+    }
+
+   
+   
 
 `
 
@@ -60,20 +61,38 @@ export class CustomSearch extends Component{
     render(){
         return(
             <div className='tweet-factory-column'>
+                <div className='search-bar-container'>
+                    <div className='search-bar-hidden-drop'>
+                        <input className='sentiment-input-search-term' 
+                                placeholder='#LambdaSchool' onChange={this.handleChanges}></input>
+
+                                <button className='demo-btn'>
+                                    <span>Submit Search</span><i class="fas fa-arrow-circle-right"></i>
+                                    
+                                </button>
+                    
+                    </div>
+                </div>
                 <div className='column-title sample'>
                     <span className='trend-icon'></span><h3 className='tab-title'>{this.state.input}</h3>
                 </div>
                 <div className='tweet-factory-content demo'>
                     <div className='walk-through-content'>
-                        <h3>Experience your first #sentiment enhanced search</h3>
+                        <h3>Enhance your experience with #sentiment search</h3>
                         <StyledSearch>
-                            <input className='sentiment-input-search-term' 
-                            placeholder='#LambdaSchool' onChange={this.handleChanges}></input>
+                            
 
-                            <button className='demo-btn'>
-                                Submit Search
+                            {
+                                TwitterWidgetsLoader.load(function(err, twttr) {
+                                    if (err) {
+                                        //do some graceful degradation / fallback
+                                        return;
+                                    }
                                 
-                            </button>
+                                    twttr.widgets.createTweet('20', {theme:'dark'},document.getElementById('tweet'));
+                                })}
+
+                            <div id='tweet'></div>
                         </StyledSearch>
                        
                         
